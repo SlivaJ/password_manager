@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<!-- Code Written by John Sliva-->
-<!--Personal offline password manager and generator using electron-->
-<!---->
+<!-- Application by John Sliva-->
+<!-- Email: Jcsliva1999@gmail.com-->
+<!-- Personal offline password manager and generator using electron-->
+<!-- This application was created by me as way for me to improve my skills as a developer.
+     The security of the information stored in this is not guarenteed by me or anyone else.
+     I am working to improve myself as a develeoper by learning how to use these tools until
+     this app meets a standard that I would be happy to release for outside testing and improvements-->
+<!-- Feel free to try the app out and send feedback to the email listed above.-->
 <!---->
 <html>
   <head>
     <meta charset="UTF-8">
     <title>Password Manager</title>
-    <link rel="stylesheet" href="cyborg_bootstrap.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/cyborg_bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
     
   
-    <script defer src="render.js"></script>
+    <script defer src="./js/render.js"></script>
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Stored Credentials</a></li>
-        <li><a href="#">"password"</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./html/stored_credentials.html">Stored Credentials</a></li>
+        <li><a href="./html/password_generator.html">Password Generator</a></li>
+        <li><a href="./html/about.html">About</a></li>
       </ul>
     </nav>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <h1>Login</h1>
+    <form>
+      <label for="Username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="Password">Password:</label><br>
+      <input type="text" id="password" name="password"><br>
+      <input type="submit"><br>
+    </form>
   </body>
 </html>

@@ -1,15 +1,24 @@
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
 }
-
-h1{
-  text-align: center;
-}
 li{
   display: inline;
   font-weight: bold;
   padding: 5px;
+}
+h1{
+  text-align: center;
+}
+.input_credential {
+  text-align: center;
+}
+input[type=text] {
+  padding: 5px 5px;
+}
+input[type=submit] {
+  padding: 5px 5px;
 }
