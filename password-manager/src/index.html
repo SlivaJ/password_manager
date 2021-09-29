@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <!-- Application by John Sliva-->
 <!-- Email: Jcsliva1999@gmail.com-->
-<!-- Personal offline password manager and generator using electron-->
-<!-- This application was created by me as way for me to improve my skills as a developer.
-     The security of the information stored in this is not guarenteed by me or anyone else.
-     I am working to improve myself as a develeoper by learning how to use these tools until
-     this app meets a standard that I would be happy to release for outside testing and improvements-->
-<!-- Feel free to try the app out and send feedback to the email listed above.-->
+<!-- Electron app to showcase and improve on some skills.-->
 <!---->
 <html>
   <head>
@@ -28,12 +23,14 @@
       </ul>
     </nav>
     <h1>Login</h1>
+    <!--Not sure if multiple accounts is worth anything for a local system if it is going to hold username and password
+    in the dataset. The Idea would be make an account for each of your emails so you know what account is tied to what email-->
     <form>
       <label for="Username">Username:</label><br>
       <input type="text" id="username" name="username"><br>
       <label for="Password">Password:</label><br>
       <input type="text" id="password" name="password"><br>
-      <input type="submit"><br>
+      <input type="submit" value="Submit"><br>
     </form>
   </body>
 </html>
