@@ -3,7 +3,7 @@
   "productName": "password-manager",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": "src/index.js",
+  "main": "src/js/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -42,7 +42,9 @@
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "@nastyox/rando.js": "^2.0.5",
+    "electron-squirrel-startup": "^1.0.0",
+    "underscore": "^1.13.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.61",
