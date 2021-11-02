@@ -16,7 +16,7 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false,//looking for an alternative to setting this to false
+      contextIsolation: false,//looking for an alternative to setting this to false (something about ipc render saved to check later)
     }
   });
   // and load the main.html of the app.

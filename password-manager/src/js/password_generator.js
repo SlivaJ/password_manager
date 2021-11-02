@@ -5,6 +5,10 @@
 const { forEach } = require('underscore');
 const _ = require('underscore');
 const {rando, randoSequence} = require('@nastyox/rando.js');
+const { clipboard } = require('electron')
+
+clipboard.writeText('Example String', 'selection')
+console.log(clipboard.readText('selection'))
 
 //Sync range bar to number text box.
 const characterAmountNumber = document.getElementById('characterAmountNumber');
@@ -77,7 +81,10 @@ function generateNewPassword(){
      */
     document.getElementById('generatedPasswordDisplay').value = newPassword;
 }
-
+function copyPassword(){//quick copy generated password to clipboard
+    var copiedText = document.getElementById("generatedPasswordDisplay").value;
+    clipboard.writeText(copiedText);
+}
 
 /* ----------------------------------- Test Functions -----------------------------------  */
 
