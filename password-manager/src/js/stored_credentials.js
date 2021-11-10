@@ -31,6 +31,7 @@ var knex = require("knex")({
     useNullAsDefault: true
 });
 
+
 knex.from('Info').select("*")
     .then((rows) => {
         for (row of rows) {
