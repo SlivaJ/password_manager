@@ -1,7 +1,7 @@
 const { app, BrowserWindow, } = require('electron');
 const path = require('path');
 
-
+//gonna add IPC in here later
 
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
