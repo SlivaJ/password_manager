@@ -37,7 +37,7 @@ node_modules/
 jspm_packages/
 
 #test data
-src/app_data/*
+src/app_data/
 
 # TypeScript v1 declaration files
 typings/
