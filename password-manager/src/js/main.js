@@ -1,4 +1,5 @@
-const { app, BrowserWindow, } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const { join } = require('path');
 const path = require('path');
 
 //gonna add IPC in here later
@@ -17,6 +18,7 @@ const createWindow = () => {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,//looking for an alternative to setting this to false (something about ipc render saved to check later)
+      preload: join(__dirname, './preload.js'), 
     }
   });
   // and load the main.html of the app.
@@ -53,3 +55,7 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+
+ipcMain.on("message", (event, args) =>{
+  console.log(args);
+});

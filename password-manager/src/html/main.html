@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="../css/cyborg_bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <script defer src="../js/main.js"></script>
+    <script>
+      let message = "working example";
+
+      const ipcTest = () =>{
+        console.log("Click!");
+        window.bridge.sendMsg(message);
+        message = '';
+      }
+    </script>
   </head>
   <body>
     <nav>
@@ -29,5 +38,6 @@
       <input type="text" id="password" name="password"><br>
       <input type="submit" value="Submit"><br>
     </form>
+    <button onclick="ipcTest()">go</button>
   </body>
 </html>
