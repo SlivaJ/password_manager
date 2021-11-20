@@ -1,14 +1,14 @@
 //password_generator.js manages the password_generator.html page functionality.
 //Written by John Sliva 
 //2021
+                                            // Might remove underscore library. I am not sure if its worth using the library to save 3 forloops of code...
+//const { forEach } = require('underscore'); // not sure why I need this because I already have underscore lib. It's also only used in test functions so worst case is delete both.
+// Is forEach native???
+const _ = require('underscore'); // IPC swap
+const {rando, randoSequence} = require('@nastyox/rando.js'); // IPC swap
+//const { clipboard } = require('electron') //I think this is ok to leave locally but I'll double check
+//I think the IPC thing I need here is the ipcRenderer one. 
 
-const { forEach } = require('underscore');
-const _ = require('underscore');
-const {rando, randoSequence} = require('@nastyox/rando.js');
-const { clipboard } = require('electron')
-
-clipboard.writeText('Example String', 'selection')
-console.log(clipboard.readText('selection'))
 
 //Sync range bar to number text box.
 const characterAmountNumber = document.getElementById('characterAmountNumber');
@@ -83,7 +83,8 @@ function generateNewPassword(){
 }
 function copyPassword(){//quick copy generated password to clipboard
     var copiedText = document.getElementById("generatedPasswordDisplay").value;
-    clipboard.writeText(copiedText);
+    //clipboard.writeText(copiedText);
+    window.bridge.copyPassword(copiedText);
 }
 
 /* ----------------------------------- Test Functions -----------------------------------  */
@@ -113,6 +114,10 @@ function testAsciiSelection(){
     console.log(number_codes.forEach(element => console.log(String.fromCharCode(element))))
     console.log("symbol selection");
     console.log(symbol_codes.forEach(element => console.log(String.fromCharCode(element))))
+
+    //clipboard functionality test
+    clipboard.writeText('Example String', 'selection')
+    console.log(clipboard.readText('selection'))
 
     //Progress notes
     //Standing problem: 

@@ -1,14 +1,16 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-
-const Examples = {
-
+// Functions with access to the node.js enviornment.
+const contextFunctions = {
+    
+    
     sendMsg : (msg) => ipcRenderer.send("message", msg),
+
+    copyPassword : (newPassword) => ipcRenderer.send("clipboard", newPassword),
 
 }
 
-contextBridge.exposeInMainWorld("bridge", Examples );
-
+contextBridge.exposeInMainWorld("bridge", contextFunctions );
 
 
 
