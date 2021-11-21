@@ -13,8 +13,8 @@ if (require("electron-squirrel-startup")) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 700,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true, //looking for an alternative to setting this to false (something about ipc render saved to check later)
@@ -55,21 +55,8 @@ app.on("activate", () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 
-//Example IPC
+//Example IPC sent to main. others in preload
 ipcMain.on("message", (event, args) => {
   console.log(args);
 });
-// Handlers for IPC events. Organized by page. Context Bridge in 'preload.js.
 
-// 'password_generator.js'  (copyToClipboard,randoSelection,forEach(maybe) )
-
-ipcMain.on("clipboard", (event, args) => {
-  //Handles copy to clipboard button.
-  clipboard.writeText(args);
-});
-
-ipcMain.on("channel", (event, args) => {
-  console.log("nexttask");
-});
-
-// 'stored_credentials.js' ()
