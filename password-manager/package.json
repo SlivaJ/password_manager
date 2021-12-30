@@ -1,61 +1,25 @@
 {
   "name": "password-manager",
-  "productName": "password-manager",
   "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "src/js/main.js",
+  "description": "Password storage, retrieval, and generation.",
+  "main": "./src/js/main.js",
   "scripts": {
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
-  "keywords": [],
-  "author": "John",
-  "license": "MIT",
-  "config": {
-    "forge": {
-      "packagerConfig": {},
-      "makers": [
-        {
-          "name": "@electron-forge/maker-squirrel",
-          "config": {
-            "name": "password_manager"
-          }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
-        }
-      ]
-    }
+  "repository": {
+    "type": "git",
+    "url": "password_manager"
+  },
+  "author": "JCS",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^16.0.4"
   },
   "dependencies": {
     "@nastyox/rando.js": "^2.0.5",
-    "electron-squirrel-startup": "^1.0.0",
-    "express": "^4.17.1",
-    "knex": "^0.95.14",
-    "sqlite3": "^5.0.2",
-    "underscore": "^1.13.1"
-  },
-  "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.61",
-    "@electron-forge/maker-deb": "^6.0.0-beta.61",
-    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
-    "@electron-forge/maker-zip": "^6.0.0-beta.61",
-    "electron": "14.0.1",
-    "electron-rebuild": "^3.2.4"
+    "bcrypt": "^5.0.1",
+    "electron-rebuild": "^3.2.5",
+    "sqlite3": "^5.0.2"
   }
 }

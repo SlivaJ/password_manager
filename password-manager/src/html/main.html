@@ -5,39 +5,47 @@
 <!---->
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Password Manager</title>
-    <link rel="stylesheet" href="../css/cyborg_bootstrap.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/cyborg_bootstrap.css" />
+    <link rel="stylesheet" href="../css/main.css" />
     <script defer src="../js/main.js"></script>
-    <script>
-      let message = "working example";
-
-      const ipcTest = () =>{
-        console.log("Click!");
-        window.bridge.sendMsg(message);
-        message = '';
-      }
-    </script>
+    <script defer src="../js/loginHandler.js"></script>
   </head>
   <body>
     <nav>
       <ul>
         <li><a href="./main.html">Home</a></li>
-        <li><a href="../html/stored_credentials.html">Stored Credentials</a></li>
-        <li><a href="../html/password_generator.html">Password Generator</a></li>
+        <li>
+          <a href="../html/stored_credentials.html">Stored Credentials</a>
+        </li>
+        <li>
+          <a href="../html/password_generator.html">Password Generator</a>
+        </li>
       </ul>
     </nav>
     <h1>Login</h1>
-    <!--Not sure if multiple accounts is worth anything for a local system if it is going to hold username and password
-    in the dataset. The Idea would be make an account for each of your emails so you know what account is tied to what email-->
+    <!--Masterkey hash test input here-->
     <form>
-      <label for="Username">Username:</label><br>
-      <input type="text" id="username" name="username"><br>
-      <label for="Password">Password:</label><br>
-      <input type="text" id="password" name="password"><br>
-      <input type="submit" value="Submit"><br>
+      <label for="password" id="loginLabel">Master Password:</label><br />
+      <input type="password" id="passwordInput" />
+      <input
+        type="button"
+        id="showPasswordButton"
+        value="show"
+      /><br /><!-- swap value for symbol later and add show password -->
+      <input
+        type="submit"
+        id="unlockButton"
+        value="Unlock"
+        onclick="confirmPassword()"
+      />
+      <input
+        type="submit"
+        id="newAccountButton"
+        value="Create Master Key"
+        onclick="createNewPassword()"
+      /><br />
     </form>
-    <button onclick="ipcTest()">go</button>
   </body>
 </html>

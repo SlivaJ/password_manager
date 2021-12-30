@@ -1,1 +1,6 @@
-password-manager/src/app_data/ignoredfile
+node_modules
+build
+npm-debug.log
+.env
+.DS_Store
+password-manager/node_modules/electron/dist/electron.exe

@@ -54,6 +54,7 @@ function generateNewPassword(){
     //will then be converted into their asccii values and displayed on the output box
     //first value: array len ----- second value: password len
     randomIntArray = window.bridge.generateRandomIntArray(selectedCharacterPool.length,passwordLength);
+    
     console.log("charpool: ",selectedCharacterPool);
     console.log("returned array: ",randomIntArray);
     randomIntArray.forEach(element => {

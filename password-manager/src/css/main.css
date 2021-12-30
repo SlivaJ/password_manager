@@ -22,3 +22,11 @@ input[type=text] {
 input[type=submit] {
   padding: 5px 5px;
 }
+#loginLabel{
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+#passwordInput{
+  margin-bottom: 5px;
+}
+
